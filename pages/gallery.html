@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Apex Motors</title>
+    <meta name="description" content="Explore our collection of luxury supercars at Apex Motors.">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/gallery.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">APEX MOTORS</a>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="gallery.html" class="active">Gallery</a>
+                <a href="about.html">About</a>
+                <a href="car-details.html">Models</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="filter-section">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Models</button>
+            <button class="filter-btn" data-filter="supercar">Supercars</button>
+            <button class="filter-btn" data-filter="hypercar">Hypercars</button>
+            <button class="filter-btn" data-filter="classic">Classics</button>
+        </div>
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="Search models...">
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="gallery-item" data-category="hypercar">
+            <div class="item-image">
+                <img src="../assets/images/cars/imola.jpg" alt="Pagani Imola">
+            </div>
+            <div class="item-content">
+                <h2>Pagani Imola</h2>
+                <p>827 HP V12 Twin-Turbo</p>
+                <button class="view-details-btn">View Details</button>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-category="hypercar">
+            <div class="item-image">
+                <img src="../assets/images/cars/bc.jpg" alt="Pagani Huayra BC">
+            </div>
+            <div class="item-content">
+                <h2>Pagani Huayra BC</h2>
+                <p>791 HP V12 Twin-Turbo</p>
+                <button class="view-details-btn">View Details</button>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-category="supercar">
+            <div class="item-image">
+                <img src="../assets/images/cars/revo.jpg" alt="Pagani Huayra R EVO">
+            </div>
+            <div class="item-content">
+                <h2>Pagani Huayra R EVO</h2>
+                <p>900 HP Naturally Aspirated V12</p>
+                <button class="view-details-btn">View Details</button>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-category="classic">
+            <div class="item-image">
+                <img src="../assets/images/cars/revolución.jpg" alt="Pagani Zonda Revolución">
+            </div>
+            <div class="item-content">
+                <h2>Pagani Zonda Revolución</h2>
+                <p>800 HP V12 AMG</p>
+                <button class="view-details-btn">View Details</button>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-category="supercar">
+            <div class="item-image">
+                <img src="../assets/images/cars/ay.jpg" alt="Apollo Yerkes">
+            </div>
+            <div class="item-content">
+                <h2>Apollo Yerkes</h2>
+                <p>750 HP V8 Twin-Turbo</p>
+                <button class="view-details-btn">View Details</button>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-category="hypercar">
+            <div class="item-image">
+                <img src="../assets/images/cars/utopia.jpg" alt="Pagani Utopia">
+            </div>
+            <div class="item-content">
+                <h2>Pagani Utopia</h2>
+                <p>864 HP V12 Twin-Turbo</p>
+                <button class="view-details-btn">View Details</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal" id="carModal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <img src="" alt="" class="modal-image">
+            <div class="modal-details">
+                <h2></h2>
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Apex Motors</h3>
+                <p>Experience automotive excellence with our collection of premium vehicles.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <a href="../index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="car-details.html">Models</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: info@apexmotors.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Apex Motors. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/gallery.js"></script>
+</body>
+</html>

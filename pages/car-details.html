@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Details - Apex Motors</title>
+    <meta name="description" content="Explore detailed specifications and features of our luxury vehicles.">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/car-details.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">APEX MOTORS</a>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="car-details.html" class="active">Models</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="car-viewer-section">
+        <div class="container">
+            <div class="car-viewer">
+                <div class="viewer-frame" id="carViewer">
+                </div>
+                <div class="color-selector">
+                    <h3>Exterior Colors</h3>
+                    <div class="color-options">
+                        <button class="color-btn active" data-color="red"></button>
+                        <button class="color-btn" data-color="blue"></button>
+                        <button class="color-btn" data-color="black"></button>
+                        <button class="color-btn" data-color="silver"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="car-info-section">
+        <div class="container">
+            <div class="car-header">
+                <h1>Apex GT3</h1>
+                <p class="car-subtitle">The Ultimate Driving Machine</p>
+            </div>
+
+            <div class="specs-tabs">
+                <button class="tab-btn active" data-tab="performance">Performance</button>
+                <button class="tab-btn" data-tab="features">Features</button>
+                <button class="tab-btn" data-tab="dimensions">Dimensions</button>
+            </div>
+
+            <div class="tab-content">
+                <div class="tab-panel active" data-panel="performance">
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <h3>Engine</h3>
+                            <p>Twin-Turbo V8</p>
+                        </div>
+                        <div class="spec-item">
+                            <h3>Power</h3>
+                            <p>780 HP</p>
+                        </div>
+                        <div class="spec-item">
+                            <h3>0-60 mph</h3>
+                            <p>2.8s</p>
+                        </div>
+                        <div class="spec-item">
+                            <h3>Top Speed</h3>
+                            <p>220+ mph</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-panel" data-panel="features">
+                    <div class="features-grid">
+                    </div>
+                </div>
+
+                <div class="tab-panel" data-panel="dimensions">
+                    <div class="dimensions-grid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="car-gallery-section">
+        <div class="container">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+            </div>
+        </div>
+    </section>
+
+    <section class="configuration-section">
+        <div class="container">
+            <h2>Configure Your Vehicle</h2>
+            <div class="config-options">
+            </div>
+            <div class="price-summary">
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Experience Excellence?</h2>
+                <p>Schedule a test drive or speak with our team today.</p>
+                <button class="cta-btn">Contact Us</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Apex Motors</h3>
+                <p>Crafting automotive excellence.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>info@apexmotors.com</p>
+                <p>(555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Apex Motors. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/car-viewer.js"></script>
+    <script src="../assets/js/car-details.js"></script>
+</body>
+</html>
