@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initializeAnimations() {
-    // Value cards animation
     const valueCards = document.querySelectorAll('.value-card');
     valueCards.forEach((card, index) => {
         card.style.animationDelay = `${index * 0.2}s`;
@@ -21,13 +20,11 @@ function initializeAnimations() {
         });
     });
 
-    // Timeline animation
     const timelineItems = document.querySelectorAll('.timeline-item');
     timelineItems.forEach((item, index) => {
         item.style.animationDelay = `${index * 0.3}s`;
     });
 
-    // Team member animation
     const teamMembers = document.querySelectorAll('.team-member');
     teamMembers.forEach(member => {
         member.style.animationDelay = '0.2s';
@@ -49,7 +46,6 @@ function setupContactForm() {
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
 
-            // Simulate form submission
             await new Promise(resolve => setTimeout(resolve, 1500));
             
             showNotification('Message sent successfully!', 'success');
@@ -108,7 +104,6 @@ function showNotification(message, type) {
     notification.className = `notification ${type}`;
     notification.textContent = message;
     
-    // Style the notification
     Object.assign(notification.style, {
         position: 'fixed',
         bottom: '20px',
@@ -125,13 +120,11 @@ function showNotification(message, type) {
     
     document.body.appendChild(notification);
     
-    // Trigger animation
     setTimeout(() => {
         notification.style.opacity = '1';
         notification.style.transform = 'translateY(0)';
     }, 10);
     
-    // Remove notification
     setTimeout(() => {
         notification.style.opacity = '0';
         notification.style.transform = 'translateY(20px)';
@@ -150,7 +143,6 @@ function handleScrollEffects() {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
 
-                // Special handling for timeline items
                 if (entry.target.classList.contains('timeline-item')) {
                     entry.target.querySelector('.timeline-content').style.opacity = '1';
                     entry.target.querySelector('.timeline-content').style.transform = 'translateX(0)';
@@ -161,12 +153,10 @@ function handleScrollEffects() {
         });
     }, observerOptions);
 
-    // Observe elements
     document.querySelectorAll('.value-card, .timeline-item, .team-member').forEach(element => {
         observer.observe(element);
     });
 
-    // Handle smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
