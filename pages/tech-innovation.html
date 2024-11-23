@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology & Innovation - Apex Motors</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/tech-innovation.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">APEX MOTORS</a>
+            <button class="mobile-nav-toggle">☰</button>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="about.html">About</a>
+                <a href="tech-innovation.html" class="active">Technology</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="tech-hero">
+        <div class="parallax-bg"></div>
+        <div class="hero-content">
+            <h1>Engineering Excellence</h1>
+            <p>Pioneering the future of automotive technology</p>
+        </div>
+    </section>
+
+    <section class="innovation-section">
+        <div class="container">
+            <h2>Innovative Features</h2>
+            <div class="innovation-grid">
+                <div class="innovation-card" data-tech="aero">
+                    <div class="card-content">
+                        <div class="card-front">
+                            <div class="icon-container">
+                                <svg class="tech-icon" viewBox="0 0 24 24">
+                                    <path d="M12 2L2 12h5v10h10V12h5L12 2z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <h3>Active Aerodynamics</h3>
+                            <p>Click to explore</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>Active Aerodynamics</h3>
+                            <p>Dynamic wing adjustment and underbody airflow management for optimal downforce.</p>
+                            <ul>
+                                <li>Variable wing angle</li>
+                                <li>Active front splitter</li>
+                                <li>Dynamic air brake</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="innovation-card" data-tech="power">
+                    <div class="card-content">
+                        <div class="card-front">
+                            <div class="icon-container">
+                                <svg class="tech-icon" viewBox="0 0 24 24">
+                                    <path d="M7 4v2h3v2H7l-2 2v3H3v-3H1v8h2v-3h2v3h3l2 2h8v-4h2v3h3V9h-3v3h-2V8h-6V6h3V4H7z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <h3>Hybrid Powertrain</h3>
+                            <p>Click to explore</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>Hybrid Powertrain</h3>
+                            <p>Next-generation hybrid system combining performance and efficiency.</p>
+                            <ul>
+                                <li>800HP Combined output</li>
+                                <li>Electric torque vectoring</li>
+                                <li>Regenerative braking</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="innovation-card" data-tech="chassis">
+                    <div class="card-content">
+                        <div class="card-front">
+                            <div class="icon-container">
+                                <svg class="tech-icon" viewBox="0 0 24 24">
+                                    <path d="M20 8h-3V4H3v18h18v-4h-3v-2h3v-2h-3v-2h3V8zM9 6h6v2H9V6zm0 12h6v2H9v-2z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <h3>Carbon Chassis</h3>
+                            <p>Click to explore</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>Carbon Chassis</h3>
+                            <p>Advanced carbon fiber monocoque for maximum rigidity and minimal weight.</p>
+                            <ul>
+                                <li>1,200kg dry weight</li>
+                                <li>Integrated roll cage</li>
+                                <li>Crash optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tech-demo-section">
+        <div class="container">
+            <h2>Technology in Motion</h2>
+            <div class="demo-container">
+                <div class="demo-controls">
+                    <button class="demo-btn active" data-demo="aero">Aerodynamics</button>
+                    <button class="demo-btn" data-demo="power">Powertrain</button>
+                    <button class="demo-btn" data-demo="chassis">Chassis</button>
+                </div>
+                <div class="demo-display">
+                    <div class="demo-visual" id="demoVisual">
+                    </div>
+                    <div class="demo-info">
+                        <div class="info-content active" data-demo="aero">
+                            <h3>Active Aerodynamics System</h3>
+                            <div class="tech-stats">
+                                <div class="stat">
+                                    <span class="value">450</span>
+                                    <span class="label">kg Downforce</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="value">0.28</span>
+                                    <span class="label">Drag Coefficient</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="metrics-section">
+        <div class="container">
+            <h2>Performance Metrics</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-visual">
+                        <canvas id="powerChart"></canvas>
+                    </div>
+                    <div class="metric-info">
+                        <h3>Power Delivery</h3>
+                        <p>Instant torque across the entire RPM range</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-visual">
+                        <canvas id="aeroChart"></canvas>
+                    </div>
+                    <div class="metric-info">
+                        <h3>Aerodynamic Efficiency</h3>
+                        <p>Optimal balance of downforce and drag</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="safety-section">
+        <div class="container">
+            <h2>Safety Innovation</h2>
+            <div class="safety-features">
+                <div class="safety-card">
+                    <div class="safety-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3>Advanced Driver Assistance</h3>
+                    <ul>
+                        <li>Predictive brake assist</li>
+                        <li>Lane departure warning</li>
+                        <li>Blind spot monitoring</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Apex Motors</h3>
+                <p>Pioneering automotive technology since 2024.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <a href="../index.html">Home</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>info@apexmotors.com</p>
+                <p>(65) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Apex Motors. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../assets/js/tech-innovation.js"></script>
+</body>
+</html>
