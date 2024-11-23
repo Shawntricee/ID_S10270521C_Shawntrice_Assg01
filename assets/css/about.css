@@ -254,7 +254,8 @@
     stroke-width: 2;
 }
 
-keyframes fadeIn {
+/* Animations */
+@keyframes fadeIn {
     from {
         opacity: 0;
         transform: translateY(20px);
@@ -280,6 +281,7 @@ keyframes fadeIn {
     animation-delay: 0.4s;
 }
 
+/* Media Queries */
 @media (max-width: 768px) {
     .hero-content h1 {
         font-size: 2.5rem;
@@ -302,6 +304,7 @@ keyframes fadeIn {
     }
 }
 
+/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
     .value-card,
     .timeline-item,

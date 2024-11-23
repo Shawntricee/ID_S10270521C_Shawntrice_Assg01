@@ -1,3 +1,4 @@
+/* Filter Section */
 .filter-section {
     position: sticky;
     top: 80px;
@@ -43,6 +44,7 @@
     color: var(--text-light);
 }
 
+/* Gallery Section */
 .gallery-section {
     padding: 1rem;
     background: var(--primary-color);
@@ -109,6 +111,7 @@
     background: #ff4500;
 }
 
+/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -148,6 +151,7 @@
     object-fit: contain;
 }
 
+/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -159,6 +163,7 @@
     }
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
     .filter-section {
         padding: 1rem;
@@ -189,6 +194,7 @@
     }
 }
 
+/* Hide content by category */
 .gallery-item[data-category] {
     display: none;
 }
