@@ -1,135 +1,134 @@
 # ID_S10270521C_Shawntrice_Assg1_website
 
-Apex Motors - Luxury Supercar Experience
+# Apex Motors 
+![Apex Motors Banner](assets/images/about-hero.jpg)
 
-Project Overview
-This project showcases a luxury automotive website for Apex Motors, offering an immersive digital experience into the world of high-performance vehicles. The website features a responsive design with smooth animations, interactive galleries, and detailed technical specifications of exclusive supercars.
- 
-User Audience Intent and Purpose
-Target Audience:
-•	High-net-worth individuals interested in luxury vehicles
-•	Supercar enthusiasts and collectors
-•	Automotive industry professionals
-•	Racing and track day enthusiasts
-•	Luxury lifestyle aficionados
-  	 	 	 
-User Goals:
-•	Explore our exclusive collection of supercars
-•	Access detailed technical specifications and performance metrics
-•	Experience immersive visual content of our vehicles
-•	Learn about cutting-edge automotive technology
-•	Connect with the brand through an engaging digital platform
-	 	 
-Website Purpose:
-•	Showcase our premium supercar collection through an interactive gallery
-•	Demonstrate technological innovations and engineering excellence
-•	Create an immersive brand experience that reflects luxury and performance
-•	Provide detailed information about our vehicles' specifications
-•	Facilitate user engagement through interactive features
-•	Deliver a seamless experience across all devices and platforms
+Experience pure automotive excellence through our digital showcase of luxury supercars.
 
-Features
+## Design Process
+This website was crafted for supercar enthusiasts and luxury vehicle buyers who seek an immersive online experience. As someone passionate about both cars and web development, I wanted to create a platform that:
 
-Existing Features:
-1.	Interactive Navigation
-•	Responsive navigation bar with smooth scrolling
-•	Mobile-optimized hamburger menu
-•	Dynamic header state changes on scroll
-•	Accessibility features for keyboard navigation
-2.	Advanced Gallery System
-•	Category-based filtering (Supercars, Hypercars, Classics)
-•	Interactive image viewing with zoom capabilities
-•	Smooth loading animations and transitions
-•	Search functionality for quick access
-•	Responsive grid layout adapting to screen sizes
-3.	Technical Innovation Showcase
-•	Interactive technology demonstrations
-•	Animated specification displays
-•	Dynamic content loading
-•	Performance metrics visualization
-•	Real-time stat counters
-4.	Responsive Design
-•	Fluid layouts adapting to all screen sizes
-•	Mobile-first approach
-•	Optimized images and assets
-•	Touch-friendly interfaces
-•	Consistent experience across devices
-5.	Performance Features
-•	Lazy loading for improved performance
-•	Optimized asset delivery
-•	Smooth scrolling and animations
-•	Cross-browser compatibility
-•	Compressed images without quality loss
+- Makes it easy to explore our exclusive vehicle collection
+- Showcases cutting-edge automotive technology
+- Delivers a premium feel that matches our brand
+- Works beautifully across all devices
 
-Technologies Used:
-•	HTML5 for semantic structure and accessibility
-•	CSS3 with modern features (Grid, Flexbox, Animations)
-•	JavaScript (ES6+) for interactivity and dynamic content
-•	Git for version control and collaboration
-•	Responsive design principles
-•	Modern CSS animations and transitions
+The site is particularly tailored for:
+- High-net-worth individuals browsing our collection
+- Supercar enthusiasts researching specifications
+- Automotive professionals seeking technical details
+- Racing enthusiasts exploring performance metrics
 
-Design Process:
-1.	Research Phase
-•	Analysis of luxury automotive websites
-•	User experience research
-•	Target audience study
-•	Competitor analysis
-2.	Design Phase
-•	Wireframe creation focusing on user experience
-•	Visual design development emphasizing brand identity
-•	Interactive prototype testing
-•	User feedback integration
-3.	Implementation Phase:
-•	Mobile-first development approach
-•	Progressive enhancement
-•	Performance optimization
-•	Accessibility implementation
-4.	Testing Phase
-•	User testing and refinement
-•	Cross-browser compatibility checks
-•	Performance benchmarking
-•	Accessibility validation
+### User Stories
+1. As a potential buyer, I want to easily browse different car models so I can find one that matches my preferences
+2. As a car enthusiast, I want to see detailed specifications so I can understand each vehicle's capabilities
+3. As a mobile user, I want a smooth browsing experience so I can explore cars on the go
+4. As a technology fan, I want to learn about innovative features so I can appreciate the engineering
 
+You can view the wireframes here:
+[Adobe XD]() / [Figma]() / [Sketch]()
 
-Testing:
-1.	Cross-browser Testing
-•	Chrome (Version 118+)
-•	Firefox (Version 117+)
-•	Safari (Version 16+)
-•	Edge (Version 118+)
-2.	Responsive Design Testing
-•	Mobile devices (320px and up)
-•	Tablets (768px and up)
-•	Laptops (1024px and up)
-•	Large displays (1440px+)
-3.	Code Validation
-•	HTML: W3C Markup Validation (Pass)
-•	CSS: W3C CSS Validation (Pass)
-•	JavaScript: ESLint configured with modern standards
-•	Accessibility: WCAG 2.1 compliance checks
+## Features
 
-Credits:
-•	Design & Development: Shawntrice Yip
-•	Images: Placeholder/demo images from various sources (replaced in production)
-•	Icons: Custom SVG implementations
-•	Fonts: Google Fonts (Roboto, specified in design)
+### Existing Features
+* Feature 1 - Navigation
+  * Responsive navbar with smooth transitions
+  * Mobile-friendly hamburger menu
+  * Dynamic header state on scroll
 
-Future Enhancements:
-•	3D car configurator with real-time rendering
-•	Virtual showroom experience with 360° views
-•	Performance comparison tool
-•	Test drive booking system
-•	User accounts with saved preferences
-•	Live chat support integration
+* Feature 2 - Gallery
+  * Category filtering system
+  * Search functionality
+  * Interactive image viewing
+  * Smooth loading animations
 
-Github Pages:
-Live website: https://shawntricee.github.io/ID_S10270521C_Shawntrice_Assg1_website/ 
+* Feature 3 - Tech Showcase
+  * Interactive demonstrations
+  * Animated specifications
+  * Performance visualizations
 
-Notes for Developers:
-•	Run HTML validation before any commits
-•	Follow BEM naming convention for CSS
-•	Use ESLint for JavaScript code quality
-•	Maintain mobile-first approach
-•	Test across multiple devices before deployment
-•	Document any major changes in commit messages
+### Features Left to Implement
+- 3D car configurator
+- Virtual showroom experience
+- Performance comparison tool
+- Test drive booking system
+- User accounts with preferences
+
+## Technologies Used
+
+1. [HTML5](https://www.w3.org/TR/html5/)
+    - Semantic markup structure
+    - Accessibility improvements
+
+2. [CSS3](https://www.w3.org/Style/CSS/)
+    - Grid and Flexbox layouts
+    - Custom animations
+    - Responsive design
+
+3. [JavaScript](https://www.javascript.com)
+    - Dynamic content loading
+    - Interactive features
+    - Smooth animations
+
+4. [Git](https://git-scm.com/)
+    - Version control
+    - Feature branching
+    - Deployment management
+
+## Testing
+
+1. Contact form:
+    1. Go to the Contact page
+    2. Try submitting empty form - verify error message
+    3. Try submitting invalid email - verify validation
+    4. Submit proper form - verify success message
+
+2. Gallery filtering:
+    1. Click different category buttons
+    2. Verify correct cars are shown/hidden
+    3. Test search functionality
+    4. Check modal view works
+
+3. Mobile responsiveness:
+    1. Verified on Chrome DevTools
+    2. Tested on real devices:
+        - iPhone 12
+        - iPad Pro
+        - Samsung Galaxy
+    3. Checked orientation changes
+
+4. Browser testing:
+    - Chrome (v118)
+    - Firefox (v117)
+    - Safari (v16)
+    - Edge (v118)
+
+### Bugs Found
+1. Bug: Gallery images not loading on Safari
+   * Fix: Updated image loading logic to be browser-compatible
+
+2. Bug: Menu overlap on certain mobile screens
+   * Fix: Adjusted z-index and positioning
+
+## Credits
+
+### Content
+- Performance statistics sourced from official manufacturer data
+- Technical specifications verified through automotive databases
+
+### Media
+- Car Images:
+  * [Pagani Imola]() - Add Pinterest source link
+  * [Pagani Huayra BC]() - Add Pinterest source link
+  * [Pagani Huayra R EVO]() - Add Pinterest source link
+  * [Pagani Zonda Revolución]() - Add Pinterest source link
+  * [Apollo Yerkes]() - Add Pinterest source link
+  * [Pagani Utopia]() - Add Pinterest source link
+
+### Acknowledgements
+- Inspired by official luxury car manufacturer websites
+- Performance animation techniques from [source]
+- Navigation design inspired by [source]
+
+## License
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
