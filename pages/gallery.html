@@ -4,114 +4,144 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - Apex Motors</title>
-    <meta name="description" content="Explore our collection of luxury supercars at Apex Motors.">
+    <meta name="description" content="Explore our collection of luxury supercars and hypercars.">
+    
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/gallery.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
         <div class="nav-container">
             <a href="../index.html" class="logo">APEX MOTORS</a>
-            <button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
-            <div class="nav-links">
+            <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="nav-links">
+                <span class="menu-icon"></span>
+            </button>
+            <div class="nav-links" id="nav-links">
                 <a href="../index.html">Home</a>
-                <a href="gallery.html" class="active">Gallery</a>
+                <a href="gallery.html" class="active" aria-current="page">Gallery</a>
                 <a href="about.html">About</a>
                 <a href="tech-innovation.html">Technology</a>
             </div>
         </div>
     </nav>
 
-    <section class="filter-section">
-        <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="all">All Models</button>
-            <button class="filter-btn" data-filter="supercar">Supercars</button>
-            <button class="filter-btn" data-filter="hypercar">Hypercars</button>
-            <button class="filter-btn" data-filter="classic">Classics</button>
-        </div>
-        <div class="search-box">
-            <input type="text" class="search-input" placeholder="Search models...">
-        </div>
-    </section>
+    <main>
+        <section class="filter-section">
+            <div class="container">
+                <div class="filter-buttons" role="group" aria-label="Filter gallery">
+                    <button class="filter-btn active" data-filter="all">All Models</button>
+                    <button class="filter-btn" data-filter="supercar">Supercars</button>
+                    <button class="filter-btn" data-filter="hypercar">Hypercars</button>
+                    <button class="filter-btn" data-filter="classic">Classics</button>
+                </div>
+                
+                <div class="search-box">
+                    <input type="search" class="search-input" placeholder="Search models..." 
+                           aria-label="Search through gallery items">
+                </div>
+            </div>
+        </section>
 
-    <section class="gallery-section">
-        <div class="gallery-item" data-category="hypercar">
-            <div class="item-image">
-                <img src="../assets/images/cars/imola.jpg" alt="Pagani Imola">
-            </div>
-            <div class="item-content">
-                <h2>Pagani Imola</h2>
-                <p>827 HP V12 Twin-Turbo</p>
-                <button class="view-details-btn">View Details</button>
-            </div>
-        </div>
+        <section class="gallery-section">
+            <div class="gallery-grid">
+                <article class="gallery-item" data-category="hypercar">
+                    <div class="item-image">
+                        <img src="../assets/images/cars/imola.jpg" alt="Pagani Imola front view" loading="lazy">
+                    </div>
+                    <div class="item-content">
+                        <h2>Pagani Imola</h2>
+                        <p>827 HP V12 Twin-Turbo | 0-60mph in 2.7s</p>
+                        <button class="view-details-btn" aria-label="View details of Pagani Imola">View Details</button>
+                    </div>
+                </article>
 
-        <div class="gallery-item" data-category="hypercar">
-            <div class="item-image">
-                <img src="../assets/images/cars/bc.jpg" alt="Pagani Huayra BC">
-            </div>
-            <div class="item-content">
-                <h2>Pagani Huayra BC</h2>
-                <p>791 HP V12 Twin-Turbo</p>
-                <button class="view-details-btn">View Details</button>
-            </div>
-        </div>
+                <article class="gallery-item" data-category="hypercar">
+                    <div class="item-image">
+                        <img src="../assets/images/cars/bc.jpg" alt="Pagani Huayra BC side view" loading="lazy">
+                    </div>
+                    <div class="item-content">
+                        <h2>Pagani Huayra BC</h2>
+                        <p>791 HP V12 Twin-Turbo | 0-60mph in 2.8s</p>
+                        <button class="view-details-btn" aria-label="View details of Pagani Huayra BC">View Details</button>
+                    </div>
+                </article>
 
-        <div class="gallery-item" data-category="supercar">
-            <div class="item-image">
-                <img src="../assets/images/cars/revo.jpg" alt="Pagani Huayra R EVO">
-            </div>
-            <div class="item-content">
-                <h2>Pagani Huayra R EVO</h2>
-                <p>900 HP Naturally Aspirated V12</p>
-                <button class="view-details-btn">View Details</button>
-            </div>
-        </div>
+                <article class="gallery-item" data-category="supercar">
+                    <div class="item-image">
+                        <img src="../assets/images/cars/revo.jpg" alt="Pagani Huayra R EVO track view" loading="lazy">
+                    </div>
+                    <div class="item-content">
+                        <h2>Pagani Huayra R EVO</h2>
+                        <p>900 HP NA V12 | Track-focused hypercar</p>
+                        <button class="view-details-btn" aria-label="View details of Pagani Huayra R EVO">View Details</button>
+                    </div>
+                </article>
 
-        <div class="gallery-item" data-category="classic">
-            <div class="item-image">
-                <img src="../assets/images/cars/revolución.jpg" alt="Pagani Zonda Revolución">
-            </div>
-            <div class="item-content">
-                <h2>Pagani Zonda Revolución</h2>
-                <p>800 HP V12 AMG</p>
-                <button class="view-details-btn">View Details</button>
-            </div>
-        </div>
+                <article class="gallery-item" data-category="classic">
+                    <div class="item-image">
+                        <img src="../assets/images/cars/revolución.jpg" alt="Pagani Zonda Revolución" loading="lazy">
+                    </div>
+                    <div class="item-content">
+                        <h2>Pagani Zonda Revolución</h2>
+                        <p>800 HP V12 AMG | Limited Edition</p>
+                        <button class="view-details-btn" aria-label="View details of Pagani Zonda Revolución">View Details</button>
+                    </div>
+                </article>
 
-        <div class="gallery-item" data-category="supercar">
-            <div class="item-image">
-                <img src="../assets/images/cars/ay.jpg" alt="Apollo Yerkes">
-            </div>
-            <div class="item-content">
-                <h2>Apollo Yerkes</h2>
-                <p>750 HP V8 Twin-Turbo</p>
-                <button class="view-details-btn">View Details</button>
-            </div>
-        </div>
+                <article class="gallery-item" data-category="supercar">
+                    <div class="item-image">
+                        <img src="../assets/images/cars/ay.jpg" alt="Apollo Yerkes front view" loading="lazy">
+                    </div>
+                    <div class="item-content">
+                        <h2>Apollo Yerkes</h2>
+                        <p>750 HP V8 Twin-Turbo | Next-gen performance</p>
+                        <button class="view-details-btn" aria-label="View details of Apollo Yerkes">View Details</button>
+                    </div>
+                </article>
 
-        <div class="gallery-item" data-category="hypercar">
-            <div class="item-image">
-                <img src="../assets/images/cars/utopia.jpg" alt="Pagani Utopia">
+                <article class="gallery-item" data-category="hypercar">
+                    <div class="item-image">
+                        <img src="../assets/images/cars/utopia.jpg" alt="Pagani Utopia side profile" loading="lazy">
+                    </div>
+                    <div class="item-content">
+                        <h2>Pagani Utopia</h2>
+                        <p>864 HP V12 Twin-Turbo | Pinnacle of design</p>
+                        <button class="view-details-btn" aria-label="View details of Pagani Utopia">View Details</button>
+                    </div>
+                </article>
             </div>
-            <div class="item-content">
-                <h2>Pagani Utopia</h2>
-                <p>864 HP V12 Twin-Turbo</p>
-                <button class="view-details-btn">View Details</button>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <div class="modal" id="carModal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <img src="" alt="" class="modal-image">
-            <div class="modal-details">
-                <h2></h2>
-                <p></p>
+        <div id="carModal" class="modal" aria-modal="true" role="dialog">
+            <div class="modal-content">
+                <button class="close-button" aria-label="Close modal">&times;</button>
+                <img src="" alt="" class="modal-image">
+                <div class="modal-details">
+                    <h2></h2>
+                    <div class="car-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Engine</span>
+                            <span class="spec-value"></span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power</span>
+                            <span class="spec-value"></span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">0-60 mph</span>
+                            <span class="spec-value"></span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Top Speed</span>
+                            <span class="spec-value"></span>
+                        </div>
+                    </div>
+                    <p class="car-description"></p>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <footer class="footer">
         <div class="footer-content">

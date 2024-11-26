@@ -1,3 +1,5 @@
+'use strict';
+
 class SiteManager {
     constructor() {
         this.initializeVariables();
@@ -6,141 +8,221 @@ class SiteManager {
     }
 
     initializeVariables() {
+        // DOM Elements
         this.navbar = document.querySelector('.navbar');
         this.mobileNavToggle = document.querySelector('.mobile-nav-toggle');
         this.navLinks = document.querySelector('.nav-links');
+        this.statsItems = Array.from(document.querySelectorAll('.stat-item'));
+        this.techItems = Array.from(document.querySelectorAll('.tech-item'));
+        this.modelCards = Array.from(document.querySelectorAll('.model-card'));
         
-        this.contactForm = document.getElementById('contactForm');
+        // State variables
+        this.lastScrollPosition = window.pageYOffset;
+        this.isNavVisible = true;
+        this.isMobileMenuOpen = false;
+        this.animatedElements = new WeakSet();
         
-        this.timelineItems = document.querySelectorAll('.timeline-item');
-        
-        this.statsItems = document.querySelectorAll('.stat-item');
-        
-        this.lastScrollPosition = 0;
+        // Animation frames
+        this.scrollRAF = null;
+        this.resizeRAF = null;
     }
 
     setupEventListeners() {
+        // Optimized scroll handling
+        window.addEventListener('scroll', () => {
+            if (this.scrollRAF) return;
+            this.scrollRAF = requestAnimationFrame(() => {
+                this.handleScroll();
+                this.scrollRAF = null;
+            });
+        });
+
+        // Mobile navigation
         if (this.mobileNavToggle) {
             this.mobileNavToggle.addEventListener('click', () => this.toggleMobileNav());
-        }
-
-        window.addEventListener('scroll', () => this.handleScroll());
-
-        if (this.contactForm) {
-            this.contactForm.addEventListener('submit', (e) => this.handleFormSubmit(e));
-        }
-
-        document.addEventListener('click', (e) => {
-            if (this.navLinks && this.navLinks.classList.contains('active')) {
-                if (!e.target.closest('.nav-links') && !e.target.closest('.mobile-nav-toggle')) {
-                    this.navLinks.classList.remove('active');
+            this.mobileNavToggle.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.toggleMobileNav();
                 }
+            });
+        }
+
+        // Close mobile menu on outside click
+        document.addEventListener('click', (e) => {
+            if (this.isMobileMenuOpen && 
+                !e.target.closest('.nav-links') && 
+                !e.target.closest('.mobile-nav-toggle')) {
+                this.closeMobileNav();
             }
         });
 
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', (e) => this.handleSmoothScroll(e));
         });
-    }
 
-    toggleMobileNav() {
-        this.navLinks.classList.toggle('active');
-        this.mobileNavToggle.classList.toggle('active');
+        // Window resize handling
+        window.addEventListener('resize', () => {
+            if (this.resizeRAF) return;
+            this.resizeRAF = requestAnimationFrame(() => {
+                this.handleResize();
+                this.resizeRAF = null;
+            });
+        });
+
+        // Escape key handling
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.isMobileMenuOpen) {
+                this.closeMobileNav();
+            }
+        });
     }
 
     handleScroll() {
         const currentScroll = window.pageYOffset;
+        const scrollDelta = currentScroll - this.lastScrollPosition;
 
-        if (currentScroll > 50) {
-            this.navbar.classList.add('scrolled');
-        } else {
-            this.navbar.classList.remove('scrolled');
+        // Navbar visibility
+        if (currentScroll > 100) {
+            if (scrollDelta > 0 && this.isNavVisible) {
+                this.navbar.classList.add('nav-hidden');
+                this.isNavVisible = false;
+            } else if (scrollDelta < 0 && !this.isNavVisible) {
+                this.navbar.classList.remove('nav-hidden');
+                this.isNavVisible = true;
+            }
         }
 
-        if (currentScroll > this.lastScrollPosition && currentScroll > 500) {
-            this.navbar.classList.add('nav-hidden');
-        } else {
-            this.navbar.classList.remove('nav-hidden');
-        }
+        // Navbar background
+        this.navbar.classList.toggle('scrolled', currentScroll > 50);
 
         this.lastScrollPosition = currentScroll;
-
         this.animateOnScroll();
     }
 
-    async handleFormSubmit(e) {
-        e.preventDefault();
-        const form = e.target;
-        const submitBtn = form.querySelector('button[type="submit"]');
-        
-        if (!this.validateForm(form)) return;
+    handleResize() {
+        // Reset mobile menu on larger screens
+        if (window.innerWidth > 768 && this.isMobileMenuOpen) {
+            this.closeMobileNav();
+        }
 
-        try {
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
+        // Update viewport height for mobile browsers
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
 
-            await new Promise(resolve => setTimeout(resolve, 1500));
-            
-            this.showNotification('Message sent successfully!', 'success');
-            form.reset();
-        } catch (error) {
-            this.showNotification('Failed to send message. Please try again.', 'error');
-        } finally {
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Send Message';
+    toggleMobileNav() {
+        this.isMobileMenuOpen = !this.isMobileMenuOpen;
+        this.mobileNavToggle.setAttribute('aria-expanded', this.isMobileMenuOpen);
+        this.navLinks.classList.toggle('active');
+        document.body.style.overflow = this.isMobileMenuOpen ? 'hidden' : '';
+    }
+
+    closeMobileNav() {
+        this.isMobileMenuOpen = false;
+        this.mobileNavToggle.setAttribute('aria-expanded', 'false');
+        this.navLinks.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    initializeAnimations() {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !this.animatedElements.has(entry.target)) {
+                    this.animatedElements.add(entry.target);
+                    entry.target.classList.add('animate');
+                    
+                    if (entry.target.classList.contains('stat-item')) {
+                        this.animateValue(entry.target);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Initialize specific animations for stats and tech items
+        if (this.statsItems.length) {
+            this.initializeStatsCounter();
+        }
+
+        if (this.techItems.length) {
+            this.initializeTechItems();
         }
     }
 
-    validateForm(form) {
-        let isValid = true;
-        const fields = form.querySelectorAll('input, textarea');
+    animateValue(element) {
+        const valueDisplay = element.querySelector('.stat-value');
+        if (!valueDisplay) return;
 
-        fields.forEach(field => {
-            if (field.hasAttribute('required') && !field.value.trim()) {
-                this.showFieldError(field, 'This field is required');
-                isValid = false;
+        const value = parseFloat(element.dataset.value);
+        const suffix = element.dataset.suffix || '';
+        const duration = 2000;
+        const steps = 60;
+        const stepTime = duration / steps;
+        
+        let current = 0;
+        let startTime = null;
+
+        const animate = (timestamp) => {
+            if (!startTime) startTime = timestamp;
+            const progress = timestamp - startTime;
+
+            if (progress < duration) {
+                current = (progress / duration) * value;
+                valueDisplay.textContent = this.formatNumber(current) + suffix;
+                requestAnimationFrame(animate);
+            } else {
+                valueDisplay.textContent = this.formatNumber(value) + suffix;
             }
+        };
 
-            if (field.type === 'email' && field.value.trim()) {
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(field.value)) {
-                    this.showFieldError(field, 'Please enter a valid email address');
-                    isValid = false;
+        requestAnimationFrame(animate);
+    }
+
+    formatNumber(number) {
+        return number % 1 === 0 ? 
+            Math.round(number).toLocaleString() : 
+            number.toFixed(1);
+    }
+
+    initializeStatsCounter() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !this.animatedElements.has(entry.target)) {
+                    this.animatedElements.add(entry.target);
+                    this.animateValue(entry.target);
                 }
-            }
+            });
+        }, {
+            threshold: 0.5
         });
 
-        return isValid;
+        this.statsItems.forEach(item => observer.observe(item));
     }
 
-    showFieldError(field, message) {
-        const errorDiv = document.createElement('div');
-        errorDiv.className = 'error-message';
-        errorDiv.textContent = message;
-        
-        const existingError = field.parentElement.querySelector('.error-message');
-        if (existingError) existingError.remove();
-        
-        field.parentElement.appendChild(errorDiv);
-        field.classList.add('error');
+    initializeTechItems() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !this.animatedElements.has(entry.target)) {
+                    this.animatedElements.add(entry.target);
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
 
-        setTimeout(() => {
-            errorDiv.remove();
-            field.classList.remove('error');
-        }, 3000);
-    }
-
-    showNotification(message, type) {
-        const notification = document.createElement('div');
-        notification.className = `notification ${type}`;
-        notification.textContent = message;
-        
-        document.body.appendChild(notification);
-        
-        setTimeout(() => {
-            notification.classList.add('fade-out');
-            setTimeout(() => notification.remove(), 300);
-        }, 3000);
+        this.techItems.forEach(item => observer.observe(item));
     }
 
     handleSmoothScroll(e) {
@@ -151,121 +233,38 @@ class SiteManager {
         const targetElement = document.querySelector(targetId);
         
         if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-
-            if (this.navLinks) {
-                this.navLinks.classList.remove('active');
+            if (this.isMobileMenuOpen) {
+                this.closeMobileNav();
             }
-        }
-    }
 
-    initializeAnimations() {
-        this.setupScrollAnimations();
-        
-        if (this.statsItems.length) {
-            this.initializeStatsCounter();
-        }
+            const headerOffset = this.navbar.offsetHeight;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-        if (this.timelineItems.length) {
-            this.initializeTimelineAnimations();
-        }
-    }
-
-    setupScrollAnimations() {
-        const options = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.2
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                    observer.unobserve(entry.target);
-                }
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
             });
-        }, options);
-
-        document.querySelectorAll('.animate-on-scroll').forEach(element => {
-            observer.observe(element);
-        });
-    }
-
-    initializeStatsCounter() {
-        const options = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.5
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    this.animateValue(entry.target);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, options);
-
-        this.statsItems.forEach(item => observer.observe(item));
-    }
-
-    animateValue(element) {
-        const value = element.dataset.value;
-        const suffix = element.dataset.suffix || '';
-        const duration = 2000;
-        const steps = 50;
-        const stepValue = value / steps;
-        let current = 0;
-
-        const timer = setInterval(() => {
-            current += stepValue;
-            if (current >= value) {
-                element.textContent = value + suffix;
-                clearInterval(timer);
-            } else {
-                element.textContent = Math.floor(current) + suffix;
-            }
-        }, duration / steps);
-    }
-
-    initializeTimelineAnimations() {
-        const options = {
-            root: null,
-            rootMargin: '-50px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, options);
-
-        this.timelineItems.forEach(item => observer.observe(item));
+        }
     }
 
     animateOnScroll() {
-        const animatedElements = document.querySelectorAll('.scroll-animate:not(.animated)');
-        
-        animatedElements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const elementBottom = element.getBoundingClientRect().bottom;
+        document.querySelectorAll('.animate-on-scroll:not(.animate)').forEach(element => {
+            const position = element.getBoundingClientRect();
             
-            if (elementTop < window.innerHeight && elementBottom > 0) {
-                element.classList.add('animated');
+            if (position.top < window.innerHeight * 0.8) {
+                element.classList.add('animate');
+                
+                if (element.classList.contains('stat-item') && !this.animatedElements.has(element)) {
+                    this.animatedElements.add(element);
+                    this.animateValue(element);
+                }
             }
         });
     }
 }
 
+// Initialize site when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    const site = new SiteManager();
+    window.site = new SiteManager();
 });

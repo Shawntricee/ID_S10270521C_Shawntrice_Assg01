@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apex Motors</title>
+    <title>Apex Motors | Luxury Automotive Excellence</title>
+    <meta name="description" content="Experience automotive excellence with premium supercars and hypercars.">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/main.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
+    <!-- Navigation -->
+    <nav class="navbar" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="index.html" class="logo">APEX MOTORS</a>
-            <button class="mobile-nav-toggle">☰</button>
-            <div class="nav-links">
+            <a href="index.html" class="logo" aria-label="Apex Motors Home">APEX MOTORS</a>
+            <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="nav-links">
+                <span aria-hidden="true">☰</span>
+            </button>
+            <div class="nav-links" id="nav-links">
                 <a href="index.html" class="active">Home</a>
                 <a href="pages/gallery.html">Gallery</a>
                 <a href="pages/about.html">About</a>
@@ -20,112 +31,138 @@
         </div>
     </nav>
 
-    <section class="hero">
+    <!-- Hero Section -->
+    <header class="hero" role="banner">
         <div class="hero-content animate-on-scroll">
-            <h1 id="experience-pure-power" class="hero-title">Experience Pure Power</h1>
-            <p>Crafting automotive excellence since 2024</p>
+            <h1 class="hero-title">Experience Pure Power</h1>
+            <p class="hero-subtitle">Crafting automotive excellence since 2024</p>
             <a href="#featured-models" class="btn">Explore Models</a>
         </div>
-    </section>
+    </header>
 
-    <section class="stats-section">
+    <!-- Stats Section -->
+    <section class="stats-section" aria-labelledby="stats-title">
         <div class="container">
             <div class="stats-grid">
-                <div class="stat-item animate-on-scroll" data-value="2.5" suffix="s">
-                    <div class="stat-title">0-60 mph</div>
-                    <div class="stat-value">0</div>
-                </div>
+                <article class="stat-item animate-on-scroll" data-value="2.5" data-suffix="s">
+                    <h3 class="stat-title">0-60 mph Time</h3>
+                    <p class="stat-value">0</p>
+                    <p class="stat-description">Seconds from standstill to 60 mph, setting new performance standards</p>
+                </article>
 
-                <div class="stat-item animate-on-scroll" data-value="220" suffix="+">
-                    <div class="stat-title">Top Speed</div>
-                    <div class="stat-value">0</div>
-                </div>
+                <article class="stat-item animate-on-scroll" data-value="220" data-suffix="+">
+                    <h3 class="stat-title">Maximum Speed</h3>
+                    <p class="stat-value">0</p>
+                    <p class="stat-description">MPH top speed, pushing the boundaries of automotive excellence</p>
+                </article>
 
-                <div class="stat-item animate-on-scroll" data-value="780" suffix="HP">
-                    <div class="stat-title">Power</div>
-                    <div class="stat-value">0</div>
-                </div>
+                <article class="stat-item animate-on-scroll" data-value="780" data-suffix="HP">
+                    <h3 class="stat-title">Engine Power</h3>
+                    <p class="stat-value">0</p>
+                    <p class="stat-description">Horsepower of pure engineering brilliance at your command</p>
+                </article>
 
-                <div class="stat-item animate-on-scroll" data-value="3200" suffix="k">
-                    <div class="stat-title">Owners</div>
-                    <div class="stat-value">0</div>
-                </div>
+                <article class="stat-item animate-on-scroll" data-value="3200" data-suffix="k">
+                    <h3 class="stat-title">Global Reach</h3>
+                    <p class="stat-value">0</p>
+                    <p class="stat-description">Valued members in our exclusive worldwide community</p>
+                </article>
             </div>
         </div>
     </section>
 
-    <section id="featured-models" class="section">
+    <!-- Featured Models Section -->
+    <section id="featured-models" class="section" aria-labelledby="models-title">
         <div class="container">
-            <h2 id="featured-models" class="section-title animate-on-scroll">Featured Models</h2>
+            <h2 id="models-title" class="section-title animate-on-scroll">Featured Models</h2>
             <div class="models-grid">
-                <div class="model-card animate-on-scroll">
+                <article class="model-card animate-on-scroll">
                     <div class="model-image">
-                        <img src="assets/images/cars/imola.jpg" alt="Pagani Imola">
+                        <img src="assets/images/cars/imola.jpg" alt="Pagani Imola supercar front view" loading="lazy">
                     </div>
                     <div class="model-info">
                         <h3>Pagani Imola</h3>
                         <p>827 HP V12 Twin-Turbo</p>
                         <a href="pages/tech-innovation.html" class="btn">Learn More</a>
                     </div>
-                </div>
+                </article>
 
-                <div class="model-card animate-on-scroll">
+                <article class="model-card animate-on-scroll">
                     <div class="model-image">
-                        <img src="assets/images/cars/bc.jpg" alt="Pagani Huayra BC">
+                        <img src="assets/images/cars/bc.jpg" alt="Pagani Huayra BC supercar side view" loading="lazy">
                     </div>
                     <div class="model-info">
                         <h3>Pagani Huayra BC</h3>
                         <p>791 HP V12 Twin-Turbo</p>
                         <a href="pages/tech-innovation.html" class="btn">Learn More</a>
                     </div>
-                </div>
+                </article>
 
-                <div class="model-card animate-on-scroll">
+                <article class="model-card animate-on-scroll">
                     <div class="model-image">
-                        <img src="assets/images/cars/revo.jpg" alt="Pagani Huayra R EVO">
+                        <img src="assets/images/cars/revo.jpg" alt="Pagani Huayra R EVO supercar track view" loading="lazy">
                     </div>
                     <div class="model-info">
                         <h3>Pagani Huayra R EVO</h3>
                         <p>900 HP Naturally Aspirated V12</p>
                         <a href="pages/tech-innovation.html" class="btn">Learn More</a>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <section class="tech-section">
+    <!-- Technology Section -->
+    <section class="section tech-section" aria-labelledby="tech-title">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">Latest Technology</h2>
+            <h2 id="tech-title" class="section-title animate-on-scroll">Latest Technology</h2>
+            
             <div class="tech-grid">
-                <div class="tech-item animate-on-scroll">
-                    <div class="tech-icon"></div>
-                    <h3>Advanced Aerodynamics</h3>
-                    <p>Computer-optimized design for maximum performance</p>
+                <!-- Carbon Fiber Innovation -->
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>Carbon Fiber Mastery</h3>
+                    <p>Revolutionary carbon composite technology delivering unprecedented strength-to-weight ratio</p>
                 </div>
-
-                <div class="tech-item animate-on-scroll">
-                    <div class="tech-icon"></div>
-                    <h3>Hybrid Power</h3>
-                    <p>Next-generation powertrain technology</p>
+    
+                <!-- Electric Performance -->
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        </svg>
+                    </div>
+                    <h3>Electric Performance</h3>
+                    <p>State-of-the-art electric powertrains delivering instant torque and sustainable performance</p>
                 </div>
-
-                <div class="tech-item animate-on-scroll">
-                    <div class="tech-icon"></div>
-                    <h3>Smart Connectivity</h3>
-                    <p>Integrated digital experience</p>
+    
+                <!-- AI Driver Assistance -->
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 16v-4M12 8h.01"/>
+                        </svg>
+                    </div>
+                    <h3>AI Driver Assistance</h3>
+                    <p>Advanced AI systems providing real-time performance optimization and safety features</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
                 <h3>About Apex Motors</h3>
                 <p>Crafting the future of automotive excellence with precision engineering and innovative design.</p>
             </div>
-            
+
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <div class="footer-links">
@@ -137,9 +174,11 @@
 
             <div class="footer-section">
                 <h3>Contact Info</h3>
-                <p>Email: info@apexmotors.com</p>
-                <p>Phone: (65) 123-4567</p>
-                <p>Address: 123 Supercar Ave, Luxury District</p>
+                <address>
+                    <p>Email: <a href="mailto:info@apexmotors.com">info@apexmotors.com</a></p>
+                    <p>Phone: <a href="tel:+6512345678">(65) 123-4567</a></p>
+                    <p>Address: 123 Supercar Ave, Luxury District</p>
+                </address>
             </div>
         </div>
         <div class="footer-bottom">
@@ -147,6 +186,7 @@
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="assets/js/main.js"></script>
 </body>
 </html>
