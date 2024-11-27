@@ -1,7 +1,6 @@
 # ID_S10270521C_Shawntrice_Assg1_website
 
-# Apex Motors 
-![Apex Motors Banner](assets/images/about-hero.jpg)
+# Apex Motors
 
 Experience pure automotive excellence through our digital showcase of luxury supercars.
 
