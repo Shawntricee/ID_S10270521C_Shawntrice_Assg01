@@ -412,8 +412,14 @@ body {
 }
 
 .footer-section h3 {
-    color: var(--accent-color);
-    margin-bottom: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.footer-bottom {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
 }
 
 .footer-links {
