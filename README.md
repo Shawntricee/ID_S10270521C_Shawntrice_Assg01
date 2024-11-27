@@ -24,29 +24,26 @@ The site is particularly tailored for:
 3. As a mobile user, I want a smooth browsing experience so I can explore cars on the go
 4. As a technology fan, I want to learn about innovative features so I can appreciate the engineering
 
-You can view the wireframes here:
-[Adobe XD]() / [Figma]() / [Sketch]()
-
 ## Features
 
 ### Existing Features
 * Feature 1 - Navigation
-  * Responsive navbar with smooth transitions
-  * Mobile-friendly hamburger menu
-  * Dynamic header state on scroll
+ * Responsive navbar with smooth transitions
+ * Mobile-friendly hamburger menu
+ * Dynamic header state on scroll
 
 * Feature 2 - Gallery
-  * Category filtering system
-  * Search functionality
-  * Interactive image viewing
-  * Smooth loading animations
+ * Category filtering system
+ * Search functionality
+ * Interactive image viewing
+ * Smooth loading animations
 
 * Feature 3 - Tech Showcase
-  * Interactive demonstrations
-  * Animated specifications
-  * Performance visualizations
+ * Interactive demonstrations
+ * Animated specifications
+ * Performance visualizations
 
-### Features Left to Implement
+### Future Features
 - 3D car configurator
 - Virtual showroom experience
 - Performance comparison tool
@@ -56,78 +53,96 @@ You can view the wireframes here:
 ## Technologies Used
 
 1. [HTML5](https://www.w3.org/TR/html5/)
-    - Semantic markup structure
-    - Accessibility improvements
+   - Semantic markup structure
+   - Accessibility features
 
 2. [CSS3](https://www.w3.org/Style/CSS/)
-    - Grid and Flexbox layouts
-    - Custom animations
-    - Responsive design
+   - Grid and Flexbox layouts
+   - Custom animations
+   - Responsive design
 
 3. [JavaScript](https://www.javascript.com)
-    - Dynamic content loading
-    - Interactive features
-    - Smooth animations
+   - Dynamic content loading
+   - Interactive features
+   - Smooth animations
 
 4. [Git](https://git-scm.com/)
-    - Version control
-    - Feature branching
-    - Deployment management
+   - Version control
+   - Feature branching
+   - Deployment management
 
 ## Testing
 
 1. Contact form:
-    1. Go to the Contact page
-    2. Try submitting empty form - verify error message
-    3. Try submitting invalid email - verify validation
-    4. Submit proper form - verify success message
+   1. Form validation
+       - Empty submission shows error
+       - Invalid email shows validation message
+       - Success message appears for valid submission
 
 2. Gallery filtering:
-    1. Click different category buttons
-    2. Verify correct cars are shown/hidden
-    3. Test search functionality
-    4. Check modal view works
+   1. Category filters function correctly
+   2. Search feature returns relevant results
+   3. Modal views work seamlessly
+   4. Responsive grid adjusts properly
 
 3. Mobile responsiveness:
-    1. Verified on Chrome DevTools
-    2. Tested on real devices:
-        - iPhone 12
-        - iPad Pro
-        - Samsung Galaxy
-    3. Checked orientation changes
+   1. Tested on:
+       - iPhone 12/13/14
+       - iPad Pro/Air
+       - Samsung Galaxy S21/S22
+   2. Orientation changes handled properly
 
-4. Browser testing:
-    - Chrome (v118)
-    - Firefox (v117)
-    - Safari (v16)
-    - Edge (v118)
+4. Browser Testing:
+   - Chrome (v118)
+   - Firefox (v117)
+   - Safari (v16)
+   - Edge (v118)
 
-### Bugs Found
-1. Bug: Gallery images not loading on Safari
-   * Fix: Updated image loading logic to be browser-compatible
-
-2. Bug: Menu overlap on certain mobile screens
-   * Fix: Adjusted z-index and positioning
+### Known Bugs
+1. Safari image loading optimization needed
+2. Minor mobile menu overlap on specific screen sizes
 
 ## Credits
 
 ### Content
-- Performance statistics sourced from official manufacturer data
-- Technical specifications verified through automotive databases
+- Technical specifications verified through manufacturer databases
+- Performance data from official documentation
 
 ### Media
-- Car Images:
-  * [Pagani Imola]() - Add Pinterest source link
-  * [Pagani Huayra BC]() - Add Pinterest source link
-  * [Pagani Huayra R EVO]() - Add Pinterest source link
-  * [Pagani Zonda Revolución]() - Add Pinterest source link
-  * [Apollo Yerkes]() - Add Pinterest source link
-  * [Pagani Utopia]() - Add Pinterest source link
+#### Car Images
+1. Pagani Imola  
+  [Pinterest Link]()
+  > Used in: Gallery, Homepage
+
+2. Pagani Huayra BC  
+  [Pinterest Link]()
+  > Used in: Homepage Featured Models
+
+3. Pagani Huayra R EVO  
+  [Pinterest Link]()
+  > Used in: Tech Innovation Page
+
+4. Pagani Zonda Revolución  
+  [Pinterest Link]()
+  > Used in: Gallery
+
+5. Apollo Yerkes  
+  [Pinterest Link]()
+  > Used in: Gallery
+
+6. Pagani Utopia  
+  [Pinterest Link]()
+  > Used in: Gallery
+
+To add Pinterest links:
+1. Copy pin URL from Pinterest
+2. Replace empty parentheses with URL
+Example: `[Pagani Imola](https://pinterest.com/pin/123456789012345678)`
 
 ### Acknowledgements
-- Inspired by official luxury car manufacturer websites
-- Performance animation techniques from [source]
-- Navigation design inspired by [source]
+- Design inspiration from luxury automotive websites
+- Animation techniques adapted from modern web practices
+- Special thanks to [Your Name] for project guidance
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
