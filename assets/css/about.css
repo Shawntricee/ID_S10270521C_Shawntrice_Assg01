@@ -4,6 +4,11 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('../images/background/about.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     margin-top: -80px;
     padding-top: 80px;
 }
@@ -343,6 +348,10 @@
 }
 
 @media (max-width: 768px) {
+    .about-hero {
+        background-attachment: scroll;
+    }
+
     .hero-content h1 {
         font-size: 3rem;
     }

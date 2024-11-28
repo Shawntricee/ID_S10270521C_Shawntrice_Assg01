@@ -1,27 +1,16 @@
 /* Hero Section */
 .tech-hero {
     height: 100vh;
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    color: var(--text-light);
-    margin-top: -80px;
-    padding-top: 80px;
-}
-
-.parallax-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7));
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('../images/background/tech.jpg');
     background-size: cover;
     background-position: center;
-    transform: translateZ(-1px) scale(1.5);
-    z-index: -1;
+    background-attachment: fixed;
+    margin-top: -80px;
+    padding-top: 80px;
 }
 
 .hero-content {
@@ -421,6 +410,10 @@
 }
 
 @media (max-width: 768px) {
+    .tech-hero {
+        background-attachment: scroll;
+    }
+
     .hero-content h1 {
         font-size: 3rem;
         white-space: normal;

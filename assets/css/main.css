@@ -107,8 +107,8 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('../images/background/main.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -495,6 +495,10 @@ body {
 
 /* Media Queries */
 @media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll;
+    }
+
     .mobile-nav-toggle {
         display: block;
     }
