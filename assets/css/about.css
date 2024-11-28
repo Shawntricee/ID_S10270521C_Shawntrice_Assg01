@@ -35,15 +35,17 @@
 
 .hero-content h1 {
     font-size: 4.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    white-space: nowrap; /* Keeps text on one line */
 }
 
-.hero-content .lead {
-    font-size: 1.8rem;
-    max-width: 700px;
+.hero-content p {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    max-width: 800px;
     margin: 0 auto;
-    line-height: 1.6;
+    line-height: 1.4;
 }
 
 /* Mission Section */
@@ -342,7 +344,7 @@
 
 @media (max-width: 768px) {
     .hero-content h1 {
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
 
     .team-grid {
@@ -399,7 +401,7 @@
 
 @media (max-width: 480px) {
     .hero-content h1 {
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
 
     .member-image {
