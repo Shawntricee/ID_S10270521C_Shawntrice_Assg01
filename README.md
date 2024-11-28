@@ -110,39 +110,45 @@ The site is particularly tailored for:
 
 ### Media
 #### Car Images
-1. Pagani Imola  
-  [Pinterest Link]()
+1. Pagani Imola
+  [Pagani Imola](https://pin.it/6UrhCwc2K)
   > Used in: Gallery, Homepage
 
-2. Pagani Huayra BC  
-  [Pinterest Link]()
+2. Pagani Huayra BC
+  [Pagani Huayra BC](https://pin.it/BOga1VCah)
   > Used in: Homepage Featured Models
 
-3. Pagani Huayra R EVO  
-  [Pinterest Link]()
+3. Pagani Huayra R EVO
+  [Pagani Huayra R EVO](https://pin.it/391ueDp2O)
   > Used in: Tech Innovation Page
 
-4. Pagani Zonda Revolución  
-  [Pinterest Link]()
+4. Pagani Zonda Revolución
+  [Pagani Zonda Revolución](https://pin.it/5Uz4NEUZE)
   > Used in: Gallery
 
-5. Apollo Yerkes  
-  [Pinterest Link]()
+5. Apollo Yerkes
+  [Apollo Yerkes](https://pin.it/7xISvUeBs)
   > Used in: Gallery
 
-6. Pagani Utopia  
-  [Pinterest Link]()
+6. Pagani Utopia
+  [Pagani Utopia](https://pin.it/1W2scGVyf)
   > Used in: Gallery
 
-To add Pinterest links:
-1. Copy pin URL from Pinterest
-2. Replace empty parentheses with URL
-Example: `[Pagani Imola](https://pinterest.com/pin/123456789012345678)`
+7. Shawntrice Yip  
+  [Shawntrice Yip](https://pin.it/rKnNtvnDr)
+  > Used in: Gallery
+
+8. Reynard Tan
+  [Reynard Tan](https://pin.it/4oqYfgBeg)
+  > Used in: Gallery
+
+9. Chill Guy
+  [Chill Guy](https://pin.it/1sf9VWaoo)
+  > Used in: Gallery
 
 ### Acknowledgements
 - Design inspiration from luxury automotive websites
 - Animation techniques adapted from modern web practices
-- Special thanks to [Your Name] for project guidance
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
