@@ -159,6 +159,59 @@
     margin-bottom: 1rem;
 }
 
+/* Video Showcase Section */
+.video-showcase {
+    padding: 5rem 0;
+    background: linear-gradient(rgba(26, 26, 26, 0.95), rgba(26, 26, 26, 0.98));
+    position: relative;
+    overflow: hidden;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.video-container:hover {
+    transform: translateY(-5px);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-description {
+    max-width: 800px;
+    margin: 2rem auto 0;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.video-description h3 {
+    color: var(--accent-color);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.video-description p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
 /* View Details Button */
 .view-details-btn {
     padding: 0.75rem 1.5rem;
@@ -312,6 +365,18 @@
     .item-content h2 {
         font-size: 1.5rem;
     }
+
+    .video-container {
+        margin: 0 1rem;
+    }
+    
+    .video-description h3 {
+        font-size: 1.5rem;
+    }
+    
+    .video-description p {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -321,6 +386,14 @@
 
     .gallery-item {
         height: 300px;
+    }
+
+    .video-showcase {
+        padding: 3rem 0;
+    }
+    
+    .video-container {
+        margin: 0 0.5rem;
     }
 }
 

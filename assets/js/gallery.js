@@ -5,6 +5,7 @@ class GalleryManager {
         this.initializeVariables();
         this.setupEventListeners();
         this.initializeLayout();
+        this.initializeVideoSection();
     }
 
     initializeVariables() {
@@ -26,6 +27,76 @@ class GalleryManager {
         this.searchDebounceTimer = null;
         this.scrollRAF = null;
         this.resizeRAF = null;
+    }
+
+    initializeVideoSection() {
+        // Get video section elements
+        const videoSection = document.querySelector('.video-showcase');
+        const videoContainer = document.querySelector('.video-container');
+        
+        if (!videoSection || !videoContainer) return;
+
+        // Intersection Observer for video section
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add animation class when section is visible
+                    entry.target.classList.add('animate');
+                    
+                    // Load video iframe when section is visible (optimization)
+                    const iframe = entry.target.querySelector('iframe');
+                    if (iframe && !iframe.src) {
+                        iframe.src = iframe.dataset.src;
+                    }
+                    
+                    videoObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '50px'
+        });
+
+        // Observe video section
+        videoObserver.observe(videoSection);
+
+        // Performance optimization for video loading
+        this.optimizeVideoLoading();
+
+        // Add scroll-based parallax effect
+        this.initializeParallaxEffect();
+    }
+
+    optimizeVideoLoading() {
+        const iframe = document.querySelector('.video-container iframe');
+        if (!iframe) return;
+
+        // Store the src in data attribute for lazy loading
+        iframe.dataset.src = iframe.src;
+        iframe.removeAttribute('src');
+
+        // Add loading class for animation
+        iframe.closest('.video-container').classList.add('loading');
+    }
+
+    initializeParallaxEffect() {
+        const videoSection = document.querySelector('.video-showcase');
+        if (!videoSection) return;
+
+        window.addEventListener('scroll', () => {
+            if (this.scrollRAF) return;
+            
+            this.scrollRAF = requestAnimationFrame(() => {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * 0.3;
+                
+                if (window.innerWidth > 768) { // Only on desktop
+                    videoSection.style.transform = `translateY(${rate}px)`;
+                }
+                
+                this.scrollRAF = null;
+            });
+        });
     }
 
     setupEventListeners() {
@@ -266,6 +337,9 @@ class GalleryManager {
         }
         if (this.resizeRAF) {
             cancelAnimationFrame(this.resizeRAF);
+        }
+        if (this.scrollRAF) {
+            cancelAnimationFrame(this.scrollRAF);
         }
     }
 }

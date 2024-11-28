@@ -1,114 +1,168 @@
 # ID_S10270521C_Shawntrice_Assg1_website
 
-# Apex Motors
+## Table of Contents
+* [Overview](#overview)
+* [Design Process](#design-process)
+* [Features](#features)
+* [Technologies Used](#technologies-used)
+* [Testing](#testing)
+* [Credits](#credits)
+* [License](#license)
 
-Experience pure automotive excellence through our digital showcase of luxury supercars.
+## Overview
+Apex Motors is a luxury automotive website crafted to deliver an immersive digital experience showcasing high-performance supercars. The site combines stunning visuals with smooth interactions to create a premium browsing experience worthy of the vehicles it presents.
 
 ## Design Process
-This website was crafted for supercar enthusiasts and luxury vehicle buyers who seek an immersive online experience. As someone passionate about both cars and web development, I wanted to create a platform that:
+Our development approach focused on creating a seamless, luxurious experience that mirrors the prestige of our vehicles. The site evolved through several stages:
 
-- Makes it easy to explore our exclusive vehicle collection
-- Showcases cutting-edge automotive technology
-- Delivers a premium feel that matches our brand
-- Works beautifully across all devices
+1. Research & Planning
+  - Studied competitor luxury car websites
+  - Analyzed user expectations for automotive sites
+  - Created wireframes for optimal user flow
 
-The site is particularly tailored for:
-- High-net-worth individuals browsing our collection
-- Supercar enthusiasts researching specifications
-- Automotive professionals seeking technical details
-- Racing enthusiasts exploring performance metrics
+2. Target Audience
+  - High-net-worth vehicle collectors
+  - Supercar enthusiasts and researchers
+  - Automotive industry professionals
+  - Performance driving enthusiasts
 
-### User Stories
-1. As a potential buyer, I want to easily browse different car models so I can find one that matches my preferences
-2. As a car enthusiast, I want to see detailed specifications so I can understand each vehicle's capabilities
-3. As a mobile user, I want a smooth browsing experience so I can explore cars on the go
-4. As a technology fan, I want to learn about innovative features so I can appreciate the engineering
+### User Stories & Solutions
+1. Potential Buyer
+  > "I want to easily browse different models to find my perfect match"
+  - Implemented intuitive gallery filtering
+  - Added detailed car specifications
+  - Created smooth image modal views
+
+2. Car Enthusiast
+  > "I need detailed specs to understand vehicle capabilities"
+  - Added comprehensive technical sections
+  - Included performance metrics
+  - Created interactive feature demonstrations
+
+3. Mobile User
+  > "I want seamless browsing across all my devices"
+  - Built fully responsive layouts
+  - Optimized images for mobile
+  - Created touch-friendly interfaces
 
 ## Features
 
-### Existing Features
-* Feature 1 - Navigation
- * Responsive navbar with smooth transitions
- * Mobile-friendly hamburger menu
- * Dynamic header state on scroll
+### Current Features
+1. **Navigation System**
+  * Dynamic navbar with scroll effects
+  * Mobile-optimized hamburger menu
+  * Smooth scrolling navigation
+  * Color-changing header on scroll
 
-* Feature 2 - Gallery
- * Category filtering system
- * Search functionality
- * Interactive image viewing
- * Smooth loading animations
+2. **Interactive Gallery**
+  * Category-based filtering
+  * Real-time search functionality
+  * Modal image viewing
+  * Lazy loading for performance
+  * Immersive video showcase
+  * Smooth transitions between views
 
-* Feature 3 - Tech Showcase
- * Interactive demonstrations
- * Animated specifications
- * Performance visualizations
+3. **Technology Showcase**
+  * Animated feature demonstrations
+  * Interactive specifications
+  * Performance visualization
+  * YouTube video integration
+  * Parallax scrolling effects
+  * Dynamic stat counters
 
-### Future Features
-- 3D car configurator
-- Virtual showroom experience
-- Performance comparison tool
-- Test drive booking system
-- User accounts with preferences
+4. **Footer Section**
+  * Accent-colored section headers
+  * Quick navigation links
+  * Contact information display
+  * Social media integration
+  * Copyright information
+
+5. **Performance Optimizations**
+  * Lazy loading for images and videos
+  * Optimized animation frames
+  * Debounced scroll events
+  * Intersection Observer usage
+  * Efficient DOM manipulation
+
+### Future Enhancements
+* 3D car configurator
+* Virtual showroom tour
+* Live booking system
+* Performance comparison tool
+* User account system
+* VR experience integration
 
 ## Technologies Used
 
-1. [HTML5](https://www.w3.org/TR/html5/)
-   - Semantic markup structure
-   - Accessibility features
+### Core Technologies
+1. **HTML5**
+  * Semantic markup structure
+  * SEO optimization
+  * Accessibility features
+  * Video embedding
 
-2. [CSS3](https://www.w3.org/Style/CSS/)
-   - Grid and Flexbox layouts
-   - Custom animations
-   - Responsive design
+2. **CSS3**
+  * Flexbox/Grid layouts
+  * Custom animations
+  * Media queries
+  * CSS variables
+  * Parallax effects
 
-3. [JavaScript](https://www.javascript.com)
-   - Dynamic content loading
-   - Interactive features
-   - Smooth animations
+3. **JavaScript**
+  * ES6+ features
+  * DOM manipulation
+  * Event handling
+  * Intersection Observer
+  * RequestAnimationFrame optimizations
+  * Smooth scrolling implementation
 
-4. [Git](https://git-scm.com/)
-   - Version control
-   - Feature branching
-   - Deployment management
+### Development Tools
+* **Git** - Version control
+* **Visual Studio Code** - Code editing
+* **Chrome DevTools** - Testing & debugging
+* **W3C Validators** - Code validation
 
 ## Testing
 
-1. Contact form:
-   1. Form validation
-       - Empty submission shows error
-       - Invalid email shows validation message
-       - Success message appears for valid submission
+### Functionality Testing
+1. **Contact Form**
+  - ✓ Validation triggers on empty fields
+  - ✓ Email format checking works
+  - ✓ Success messages display correctly
 
-2. Gallery filtering:
-   1. Category filters function correctly
-   2. Search feature returns relevant results
-   3. Modal views work seamlessly
-   4. Responsive grid adjusts properly
+2. **Gallery System**
+  - ✓ Filters work across categories
+  - ✓ Search returns accurate results
+  - ✓ Modals display properly
+  - ✓ Grid responds to screen sizes
+  - ✓ Video integration works seamlessly
+  - ✓ Lazy loading functions correctly
 
-3. Mobile responsiveness:
-   1. Tested on:
-       - iPhone 12/13/14
-       - iPad Pro/Air
-       - Samsung Galaxy S21/S22
-   2. Orientation changes handled properly
+### Cross-browser Testing
+Thoroughly tested on:
+* Chrome (v118)
+* Firefox (v117)
+* Safari (v16)
+* Edge (v118)
 
-4. Browser Testing:
-   - Chrome (v118)
-   - Firefox (v117)
-   - Safari (v16)
-   - Edge (v118)
+### Device Testing
+Verified on:
+* iPhones (12-14 series)
+* iPads (Pro/Air)
+* Samsung Galaxy (S21/S22)
+* Various screen sizes
 
-### Known Bugs
-1. Safari image loading optimization needed
-2. Minor mobile menu overlap on specific screen sizes
+### Known Issues
+1. Safari-specific image loading needs optimization
+2. Minor mobile menu positioning fix needed
 
 ## Credits
 
 ### Content
-- Technical specifications verified through manufacturer databases
-- Performance data from official documentation
+* Technical data verified through manufacturer databases
+* Performance statistics from official sources
 
-### Media
+### Media Sources
 #### Car Images
 1. Pagani Imola
   [Pagani Imola](https://pin.it/6UrhCwc2K)
@@ -116,11 +170,11 @@ The site is particularly tailored for:
 
 2. Pagani Huayra BC
   [Pagani Huayra BC](https://pin.it/BOga1VCah)
-  > Used in: Homepage Featured Models
+  > Used in: Gallery, Homepage
 
 3. Pagani Huayra R EVO
   [Pagani Huayra R EVO](https://pin.it/391ueDp2O)
-  > Used in: Tech Innovation Page
+  > Used in: Gallery, Homepage
 
 4. Pagani Zonda Revolución
   [Pagani Zonda Revolución](https://pin.it/5Uz4NEUZE)
@@ -134,21 +188,29 @@ The site is particularly tailored for:
   [Pagani Utopia](https://pin.it/1W2scGVyf)
   > Used in: Gallery
 
+#### Team Images
 7. Shawntrice Yip  
-  [Shawntrice Yip](https://pin.it/rKnNtvnDr)
-  > Used in: Gallery
+  [CEO Image](https://pin.it/rKnNtvnDr)
+  > Used in: About Page
 
 8. Reynard Tan
-  [Reynard Tan](https://pin.it/4oqYfgBeg)
-  > Used in: Gallery
+  [CTO Image](https://pin.it/4oqYfgBeg)
+  > Used in: About Page
 
 9. Chill Guy
-  [Chill Guy](https://pin.it/1sf9VWaoo)
-  > Used in: Gallery
+  [Design Director](https://pin.it/1sf9VWaoo)
+  > Used in: About Page
 
-### Acknowledgements
-- Design inspiration from luxury automotive websites
-- Animation techniques adapted from modern web practices
+#### Video Content
+* [Experience Pure Power](https://youtu.be/Wc2UN3yL2CU) - Featured in Gallery page
+
+### Inspiration
+* Lamborghini's official website - Navigation style
+* Pagani's website - Gallery layout
+* McLaren's website - Technical showcase
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is under the MIT License - see [LICENSE.md](LICENSE.md)
+
+### Wireframe Design
+- View my Figma wireframe design here: [Figma Link](https://www.figma.com/design/8XCChG6N1WIgFkhjcHF1YU/ID_S10270521C_Shawntrice_Assg1_wireframe?node-id=1-8&t=0mZ6oE7sWRz9UmhX-1)
